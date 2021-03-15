@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Health.cs" />
+     <Compile Include="Assets\Script\Delegate.cs" />
      <Compile Include="Assets\Script\EnemyStaSulCoso.cs" />
      <Compile Include="Assets\Script\NemicoCheTiSegue.cs" />
      <Compile Include="Assets\Script\Player.cs" />

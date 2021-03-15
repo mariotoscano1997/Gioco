@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //life
+    private int life=3;//10=5 cuori
     private Rigidbody2D rb;
     public float speed;
     private float moveInput;
@@ -17,8 +19,9 @@ public class Player : MonoBehaviour
     public float jumpForce;
     //------------
     private Animator anim;
-    private enum State {idle, running, jumping, falling, hurt}
+    private enum State {idle, running, jumping, falling, hurt,die, stop}
     private State state = State.idle;
+    private LifeHandler lifeHandler;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -26,14 +29,14 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(state!=State.hurt){
+        if((state!=State.hurt)&&(state!=State.die)){
             moveInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         }
     }
     private void Update()
     {
-        if(state!=State.hurt){
+        if((state!=State.hurt)&&(state!=State.die)){//sistemare dopo la courines
         
             move();
         }
@@ -99,13 +102,23 @@ public class Player : MonoBehaviour
             {
                 state = State.hurt;
                 //prendo danno
+                life--;
+                print(life); 
+                
+                OnButtonClick();            
+                if(life<=0){
+                    state=State.die;                              
+                    StartCoroutine("Die");
+                }
                 if (other.gameObject.transform.position.x > transform.position.x)
                 {
+                    
                     //Enemy is to my right therefore should be damaged and move left
                     rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
                 }
                 else
                 {
+                    
                     //Enemy is to my left therefore i Should be damaged and move right
                     rb.velocity = new Vector2(+hurtForce, rb.velocity.y);
                 }
@@ -113,10 +126,31 @@ public class Player : MonoBehaviour
             
         }
     }
+    //die
+    //sistemare in una classe apposita
+    public delegate void ButtonClick();
+    public static event ButtonClick Click;
+    public void OnButtonClick()
+    {
+        //call the event
+        Click ();
+    }
+    IEnumerator Die(){    
+        print("inizio a sanguinare");
+        yield return new WaitForSeconds(1.5f); 
+        print("Alfio non picchiarmi");
+        Destroy(this.gameObject);
+        yield return new WaitForSeconds(3f); 
+
+    }
     //handle state
     private void AnimationState()
     {
-        if(state == State.jumping)
+       
+        if(state == State.die){
+            //call the coroutines
+        }
+        else if(state == State.jumping)
         {
             if(rb.velocity.y < .1f)
             {
