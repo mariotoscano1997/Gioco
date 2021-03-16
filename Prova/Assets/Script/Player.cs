@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //life
-    private int life=3;//10=5 cuori
+    private int life=10;//10=5 cuori
     private Rigidbody2D rb;
     public float speed;
     private float moveInput;
@@ -22,10 +22,17 @@ public class Player : MonoBehaviour
     private enum State {idle, running, jumping, falling, hurt,die, stop}
     private State state = State.idle;
     private LifeHandler lifeHandler;
+       
     void Start()
     {
+        //GameManager.Awake();
         rb = GetComponent<Rigidbody2D>();   
         anim = GetComponent<Animator>();
+        GameManager.getInstance().setPlayer(this);
+        StartCoroutine("Timer_update");
+    }
+    public int getLife(){
+        return life;
     }
     private void FixedUpdate()
     {
@@ -95,6 +102,8 @@ public class Player : MonoBehaviour
         {
             if(state == State.falling)
             {
+
+                
                 Destroy(other.gameObject);
                 Jump();
             }
@@ -103,9 +112,8 @@ public class Player : MonoBehaviour
                 state = State.hurt;
                 //prendo danno
                 life--;
-                print(life); 
-                
-                OnButtonClick();            
+                print(life);                 
+                OnTakeDamage();            
                 if(life<=0){
                     state=State.die;                              
                     StartCoroutine("Die");
@@ -128,12 +136,12 @@ public class Player : MonoBehaviour
     }
     //die
     //sistemare in una classe apposita
-    public delegate void ButtonClick();
-    public static event ButtonClick Click;
-    public void OnButtonClick()
+    public delegate void takeDamage();
+    public static event takeDamage event_health;
+    public void OnTakeDamage()
     {
         //call the event
-        Click ();
+        event_health ();
     }
     IEnumerator Die(){    
         print("inizio a sanguinare");
@@ -182,5 +190,14 @@ public class Player : MonoBehaviour
         {
             state = State.idle;
         }
+        print(state);
     }
+    IEnumerator Timer_update()
+    {
+        while (true) {
+            yield return new WaitForSeconds(0.1f);
+            GameManager.getInstance().inc_Time(0.1f);
+        }
+    }
+
 }

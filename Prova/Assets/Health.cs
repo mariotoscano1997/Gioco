@@ -9,15 +9,22 @@ public class Health : MonoBehaviour
     public Texture sprite;
     public GameObject h;
     public GameObject raw;
-    public GameObject[] Options;
+    public Texture half_hearth;
+    public GameObject[] Options;    
     public int hearth_h;
     public int hearth_w;
+     
     void OnEnable () {        
-        Player.Click += Change;
+        Player.event_health += Change;
     }
     void Change(){
         //scrivere la gestione dei cuori
-        print("Esaddsa");
+        int player_life=GameManager.getInstance().getPlayer().getLife();
+        if(player_life%2==0){
+                Destroy(Options[player_life/2]);            
+        }else{
+            Options[(int)Mathf.Floor(((float) player_life)/2)].GetComponent<RawImage>().texture=half_hearth;
+        }
     }
     void Start()
     {
@@ -30,6 +37,7 @@ public class Health : MonoBehaviour
             //Options[i]=h;
             Options[i]= GameObject.Instantiate(raw);
             Options[i].transform.position=new Vector2(Options[i].transform.position.x-(hearth_w*i),Options[i].transform.position.y );
+            
             //Options[i].AddComponent(typeof(RawImage));
             //Options[i].GetComponent<RawImage>().texture=sprite;
             //Options[i].transform.position=raw.transform.position;

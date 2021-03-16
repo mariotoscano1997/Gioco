@@ -58,8 +58,10 @@
      <Compile Include="Assets\Health.cs" />
      <Compile Include="Assets\Script\Delegate.cs" />
      <Compile Include="Assets\Script\EnemyStaSulCoso.cs" />
+     <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\NemicoCheTiSegue.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\time_canvas.cs" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/tosca/Documents/Università/Gioco/Prova/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -480,9 +480,9 @@ Animator:
   m_GameObject: {fileID: 834668066}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e388abf20f240544b7195ea48185fb6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_Controller: {fileID: 9100000, guid: d3d2f547157032643a217f67d74e8916, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -2174,6 +2174,7 @@ GameObject:
   - component: {fileID: 1714779655}
   - component: {fileID: 1714779654}
   - component: {fileID: 1714779658}
+  - component: {fileID: 1714779659}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Enemy
@@ -2277,9 +2278,23 @@ MonoBehaviour:
   sprite: {fileID: 2800000, guid: e54c755fbe370ee4390d16e1dd3ccc2d, type: 3}
   h: {fileID: 961231779}
   raw: {fileID: 2429757546083793417, guid: 43b4b94c453e67c458382ffc10f7cf44, type: 3}
+  half_hearth: {fileID: 2800000, guid: 2caca368cc33c1b41852825b929d018a, type: 3}
   Options: []
   hearth_h: 40
   hearth_w: 40
+--- !u!114 &1714779659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714779653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d9d08439510c64590270c3dc67ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 1206575235}
 --- !u!1 &2145378159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2518,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555641546859810741, guid: a4ff5916bb888d040bcf872a1661d45f,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555641546859810741, guid: a4ff5916bb888d040bcf872a1661d45f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4518477
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1555641546859810737, guid: a4ff5916bb888d040bcf872a1661d45f, type: 3}

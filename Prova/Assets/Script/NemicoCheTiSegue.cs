@@ -8,17 +8,33 @@ public class NemicoCheTiSegue : MonoBehaviour
     public Transform GroundDetection;
     private bool movingRight;
     // Start is called before the first frame update
+     void OnEnable () {        
+        Player.event_health += deleteTarget;
+    }
     void Start()
     {
         movingRight = true;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+    }
+    public void deleteTarget(){
+        if(!GameManager.getInstance().getPlayer()){
+            this.target=null;
+            print("Alfio non mi segue più");
+        }
+            
+    }
+    public void onDestroy(){
+        Debug.Log("OnDestroy");
+        Player.event_health -= deleteTarget;
+        print("lo tolgo dalla lista");
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit2D groundInfo = Physics2D.Raycast(GroundDetection.position, Vector2.down, 0.2f);
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+        if (target&&(Vector2.Distance(transform.position, target.position) > stoppingDistance))
         {
             if (groundInfo.collider == true)
             {
