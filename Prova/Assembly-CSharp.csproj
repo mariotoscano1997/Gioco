@@ -55,7 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\checkpoint.cs" />
      <Compile Include="Assets\Health.cs" />
+     <Compile Include="Assets\Points.cs" />
+     <Compile Include="Assets\Script\coin.cs" />
      <Compile Include="Assets\Script\Delegate.cs" />
      <Compile Include="Assets\Script\EnemyStaSulCoso.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />

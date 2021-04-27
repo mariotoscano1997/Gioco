@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //life
-    private int life=10;//10=5 cuori
+    private int life;
     private Rigidbody2D rb;
     public float speed;
     private float moveInput;
@@ -17,12 +17,13 @@ public class Player : MonoBehaviour
     public float hurtForce;
     private bool isJumping;
     public float jumpForce;
+    public Transform playerTrasform;
     //------------
     private Animator anim;
     private enum State {idle, running, jumping, falling, hurt,die, stop}
     private State state = State.idle;
     private LifeHandler lifeHandler;
-       
+      
     void Start()
     {
         //GameManager.Awake();
@@ -30,9 +31,16 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         GameManager.getInstance().setPlayer(this);
         StartCoroutine("Timer_update");
+        life=GameManager.getInstance().getPlayerCurrentLife();
+        print("sto ripartendo");  
+        playerTrasform.position=GameManager.getInstance().getLastCheck();  
+        print("la vita del player è " + life);
     }
     public int getLife(){
         return life;
+    }
+    public void setLife(int life){
+        this.life=life;
     }
     private void FixedUpdate()
     {
@@ -40,6 +48,10 @@ public class Player : MonoBehaviour
             moveInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         }
+        if(rb.position.y<=-10)
+            if(GameManager.getInstance().isAlreadyEndend()==false)
+                GameManager.getInstance().GameOver();
+
     }
     private void Update()
     {
@@ -94,6 +106,23 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         state = State.jumping;
     }
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.tag == "good_coin"){
+            Destroy(other.gameObject);
+            GameManager.getInstance().incPoints(10);
+            OnTakePoint();
+            print("Punteggio :");
+            print(GameManager.getInstance().getPoints());
+        }
+        else if(other.gameObject.tag == "bad_coin"){
+            Destroy(other.gameObject);
+            GameManager.getInstance().decPoints(15);
+            OnTakePoint();
+            print("Punteggio :");
+            print(GameManager.getInstance().getPoints());
+        }
+
+    }
     //enemy collision
      private void OnCollisionEnter2D(Collision2D other)
     {
@@ -105,6 +134,8 @@ public class Player : MonoBehaviour
 
                 
                 Destroy(other.gameObject);
+                GameManager.getInstance().incPoints(5);
+                OnTakePoint(); 
                 Jump();
             }
             else
@@ -113,7 +144,8 @@ public class Player : MonoBehaviour
                 //prendo danno
                 life--;
                 print(life);                 
-                OnTakeDamage();            
+                OnTakeDamage();
+                           
                 if(life<=0){
                     state=State.die;                              
                     StartCoroutine("Die");
@@ -133,6 +165,7 @@ public class Player : MonoBehaviour
             }
             
         }
+        
     }
     //die
     //sistemare in una classe apposita
@@ -142,6 +175,13 @@ public class Player : MonoBehaviour
     {
         //call the event
         event_health ();
+    }
+    public delegate void takePoints();
+    public static event takePoints event_point;
+    public void OnTakePoint()
+    {
+        //call the event
+        event_point ();
     }
     IEnumerator Die(){    
         print("inizio a sanguinare");
@@ -190,7 +230,7 @@ public class Player : MonoBehaviour
         {
             state = State.idle;
         }
-        print(state);
+        //print(state);
     }
     IEnumerator Timer_update()
     {

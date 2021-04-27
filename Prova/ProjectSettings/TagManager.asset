@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - good_coin
+  - bad_coin
   layers:
   - Default
   - TransparentFX
