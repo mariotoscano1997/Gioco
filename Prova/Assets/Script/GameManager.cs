@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GameManager : MonoBehaviour {
-    private static GameManager _instance=new GameManager();
-   // public static GameManager Instance { get { return _instance; } }
+public class GameManager {
+   private static GameManager _instance =new GameManager();
+   
    private float time;
    private int points;
    private bool isEndend;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
    private bool isCheckpointTrigger;
    private int max_life;
    private int playerCurrentLife;
+   private float finalTime=0;
     private GameManager(){
         
         //print("lo sto creando");
@@ -80,29 +82,37 @@ public class GameManager : MonoBehaviour {
     public Vector3 getLastCheck(){
         return lastCheck;
     }
+    public bool isCheckPointReached(){
+        return isCheckpointTrigger;
+    }
+    public void GameOver(){
+        isEndend=true;
+        finalTime=time;
+        this.player.DestroyPlayer();
+        //print("GameOver");
+        //if(isCheckpointTrigger==false)
+            //nvoke("restart",0);
+           // Invoke("reloadFromCheck",2.0f);
+        
+    }
+    public float getFinalTime(){
+        return finalTime;
+    }
     public void restart(){
         time=0;
         points=0;
         isEndend=false;
         isCheckpointTrigger=false;
-        player.setLife(max_life);
+        playerCurrentLife=max_life;
         OnGameRestart();
         lastCheck=new Vector3(-0.604f,-0.7802977f,0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        print("dopo il restart"+player.getLife());
-    }
-    public void GameOver(){
-        isEndend=true;
-        print("GameOver");
-        if(isCheckpointTrigger==false)
-            restart();
-        else
-            reloadFromCheck();
-        
+        //print("dopo il restart"+player.getLife());
     }
     public void reloadFromCheck(){
         OnGameRestart();
         isEndend=false;
+        time=finalTime;
         playerCurrentLife= player.getLife();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

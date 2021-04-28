@@ -187,9 +187,14 @@ public class Player : MonoBehaviour
         print("inizio a sanguinare");
         yield return new WaitForSeconds(1.5f); 
         print("Alfio non picchiarmi");
+        GameManager.getInstance().GameOver();
         Destroy(this.gameObject);
         yield return new WaitForSeconds(3f); 
+        
 
+    }
+    public void DestroyPlayer(){
+        Destroy(this.gameObject);
     }
     //handle state
     private void AnimationState()

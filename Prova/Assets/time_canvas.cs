@@ -15,21 +15,7 @@ public class time_canvas : MonoBehaviour
     void Update()
     {
         int time = (int) GameManager.getInstance().getTime();
-        this.timeText.text = "Time: " + TimeToString(time);
+        this.timeText.text = "Time: " + Utils.TimeToString(time);
     }
-    public string TimeToString(float time)
-    {
-        string minutes = "" + Mathf.Floor(time / 60);
-        string seconds = "" + Mathf.RoundToInt(time % 60);
-
-        if (minutes.Length == 1) {
-            minutes = "0" + minutes;
-        }
-        if (seconds.Length == 1) {
-            seconds = "0" + seconds;
-        }
-
-        return minutes + ":" + seconds;
-    }
-
+    
 }

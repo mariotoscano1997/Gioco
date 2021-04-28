@@ -56,14 +56,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\checkpoint.cs" />
+     <Compile Include="Assets\GameOverCanvas.cs" />
      <Compile Include="Assets\Health.cs" />
      <Compile Include="Assets\Points.cs" />
+     <Compile Include="Assets\ResetButton.cs" />
      <Compile Include="Assets\Script\coin.cs" />
      <Compile Include="Assets\Script\Delegate.cs" />
      <Compile Include="Assets\Script\EnemyStaSulCoso.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\NemicoCheTiSegue.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\Script\Utils.cs" />
      <Compile Include="Assets\time_canvas.cs" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
