@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameOverCanvas : MonoBehaviour
 {
     private Canvas gameOver;
-    public Button reset, reload, exit;
+    public Button reset, reload, exit, rank;
     public Text points;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class GameOverCanvas : MonoBehaviour
         reset.GetComponent<Button>().onClick.AddListener(resetOnClick);     
         reload.GetComponent<Button>().onClick.AddListener(resetCheckOnClick);
         exit.GetComponent<Button>().onClick.AddListener(exitApp);
+        rank.GetComponent<Button>().onClick.AddListener(showRank);
     
 
     }
@@ -38,6 +39,9 @@ public class GameOverCanvas : MonoBehaviour
     }
     private void exitApp(){
         Application.Quit();
+    }
+    private void showRank(){
+        GameManager.getInstance().setShowRank(true);
     }
 }
 

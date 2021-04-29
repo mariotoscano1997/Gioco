@@ -14,6 +14,8 @@ public class GameManager {
    private int max_life;
    private int playerCurrentLife;
    private float finalTime=0;
+   private bool showRank=false;
+
     private GameManager(){
         
         //print("lo sto creando");
@@ -97,6 +99,12 @@ public class GameManager {
     }
     public float getFinalTime(){
         return finalTime;
+    }
+    public bool getShowRank(){
+        return showRank;
+    }
+    public void setShowRank(bool x){
+        showRank=x  ;
     }
     public void restart(){
         time=0;
