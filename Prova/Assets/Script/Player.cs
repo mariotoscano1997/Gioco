@@ -49,8 +49,12 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         }
         if(rb.position.y<=-10)
-            if(GameManager.getInstance().isAlreadyEndend()==false)
+            if(GameManager.getInstance().isAlreadyEndend()==false){
+                print("cado0");
                 GameManager.getInstance().GameOver();
+                FindObjectOfType<AudioManager>().MuteAllSound();
+            }
+                
 
     }
     private void Update()
@@ -187,6 +191,7 @@ public class Player : MonoBehaviour
         print("inizio a sanguinare");
         yield return new WaitForSeconds(1.5f); 
         print("Alfio non picchiarmi");
+        FindObjectOfType<AudioManager>().MuteAllSound();
         GameManager.getInstance().GameOver();
         Destroy(this.gameObject);
         yield return new WaitForSeconds(3f); 

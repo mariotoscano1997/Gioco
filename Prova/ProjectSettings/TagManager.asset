@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - good_coin
   - bad_coin
+  - endGameUI
   layers:
   - Default
   - TransparentFX

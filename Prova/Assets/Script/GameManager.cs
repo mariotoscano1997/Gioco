@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class GameManager {
    private static GameManager _instance =new GameManager();
-   
    private float time;
    private int points;
    private bool isEndend;
@@ -15,7 +16,10 @@ public class GameManager {
    private int playerCurrentLife;
    private float finalTime=0;
    private bool showRank=false;
-
+   private GameObject endUI;
+   private GameObject finishUI;
+   private int score;
+   private bool boost;
     private GameManager(){
         
         //print("lo sto creando");
@@ -24,11 +28,27 @@ public class GameManager {
         isEndend=false;
         lastCheck=new Vector3(-0.604f,-0.7802977f,0f);
         isCheckpointTrigger=false;
-        max_life=10;
+        max_life=PlayerPrefs.GetInt("PlayerMaxLife",4);
         playerCurrentLife=max_life;
     }
+    public void setFinishUI(GameObject _finishUI){
+        finishUI=_finishUI;
+    }
+    public void setEndUI(GameObject _endUI){
+        endUI=_endUI;
+    }
+    public GameObject getEndUI(){
+        return endUI;
+    }
     public static GameManager getInstance() {
-        return GameManager._instance;
+        return GameManager._instance;   
+    }
+    public void SetBoost(){
+        boost=true;
+    }
+
+    public bool GetBoost(){
+        return boost;
     }
     public delegate void gameRestart();
     public static event gameRestart event_restart;
@@ -90,12 +110,45 @@ public class GameManager {
     public void GameOver(){
         isEndend=true;
         finalTime=time;
+        //GameObject.FindWithTag("endGameUI").Find("UIEndGame").SetActive(true);
+        endUI.SetActive(true);
+        
         this.player.DestroyPlayer();
         //print("GameOver");
         //if(isCheckpointTrigger==false)
             //nvoke("restart",0);
            // Invoke("reloadFromCheck",2.0f);
         
+    }
+    public int getScore(){
+        return score;
+    }
+    public int finish(){
+        score=scoreCalc();
+        int money=PlayerPrefs.GetInt("money",-100);
+        if(money==-100)
+            money=0;
+        money+=score/100;
+        PlayerPrefs.SetInt("money",money);
+        finishUI.SetActive(true);
+        GameObject scoreObject = GameObject.Find("score");
+        if(scoreObject==null) return 0;
+        else scoreObject.GetComponent<TMPro.TextMeshProUGUI>().text=""+score;
+        GameObject moneyObject = GameObject.Find("monete");
+        if(moneyObject==null) return 0;
+        else moneyObject.GetComponent<TMPro.TextMeshProUGUI>().text=""+score/100;
+        //print("il punteggio è: "+score);
+        return money;
+    }
+    private int scoreCalc(){
+        float endTime=time;
+        int score=(int)(100+points*1000/endTime);
+        if(boost){
+            score*=2;
+            boost=false;
+        }
+
+        return score;
     }
     public float getFinalTime(){
         return finalTime;

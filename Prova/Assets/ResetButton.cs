@@ -15,10 +15,4 @@ public class ResetButton : MonoBehaviour
         print("ho premuto sto cazzo di bottone");
         GameManager.getInstance().restart();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

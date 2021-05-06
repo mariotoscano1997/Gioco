@@ -11,10 +11,30 @@ public class rank : MonoBehaviour
     private List<Transform> listTransform;
     //private Transform;
     // Start is called before the first frame update
+    
+    public void OnEnable(){
+        print("mi risveglio");
+        foreach (Transform child in container) {
+            if(child.name=="entry(Clone)")
+                GameObject.Destroy(child.gameObject);
+        }
+        updateTable();
+    }
+    public void OnDisable(){
+        print("sono dentro al metodo");
+       /* foreach (Transform child in container) {
+            if(child.name=="entry(Clone)")
+                GameObject.Destroy(child.gameObject);
+        }*/
+    
+    }
     public void Start(){
-        this.transform.parent.GetComponent<Canvas>().enabled=false;
-        closeButton.GetComponent<Button>().onClick.AddListener(close);
-        print("si è spento?");
+        print("emh?");
+        foreach (Transform child in container) {
+            if(child.name=="entry(Clone)")
+                GameObject.Destroy(child.gameObject);
+        }
+        updateTable();
     }
     private void close(){
         GameManager.getInstance().setShowRank(false);
@@ -23,11 +43,11 @@ public class rank : MonoBehaviour
     public  void Show(){
         this.transform.parent.GetComponent<Canvas>().enabled=true;
     }
-    public void Update(){
-        if(GameManager.getInstance().getShowRank()) Show();
-    }
-    private void Awake()
-    {   
+    public void updateTable(){
+        foreach (Transform child in container) {
+            if(child.name=="entry(Clone)")
+                GameObject.Destroy(child.gameObject);
+        }
         entryTemp.gameObject.SetActive(false);
         /*
         listScore= new List<HighScoreEntry>(){
@@ -54,6 +74,12 @@ public class rank : MonoBehaviour
         //HighScores highScores= new HighScores(){list=listScore};
         string json=JsonUtility.ToJson(highScores);
         PlayerPrefs.SetString("highScoreTable", json);
+
+    }
+
+    private void Awake()
+    {   
+        //updateTable();
     }
     private void createList(HighScoreEntry entry, Transform container, List<Transform> transformList){
         Transform entryTransform= Instantiate(entryTemp, container);
@@ -74,7 +100,7 @@ public class rank : MonoBehaviour
         entryTransform.Find("pos").GetComponent<Text>().text=posLabelText;
         transformList.Add(entryTransform);                
     }
-    private void addEntry(int score, string name){
+    public static void addEntry(int score, string name){
         HighScoreEntry entry = new HighScoreEntry(){ name=name, score=score};
         string json = PlayerPrefs.GetString("highScoreTable");
         HighScores highScores= JsonUtility.FromJson<HighScores>(json);
@@ -84,6 +110,7 @@ public class rank : MonoBehaviour
 
         json=JsonUtility.ToJson(highScores);
         PlayerPrefs.SetString("highScoreTable", json);
+        
 
     }
     private class HighScores{
