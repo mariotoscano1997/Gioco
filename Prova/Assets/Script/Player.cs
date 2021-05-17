@@ -131,20 +131,57 @@ public class Player : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D other)
     {
         
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.layer == 9)
         {
             if(state == State.falling)
             {
 
+                if(other.gameObject.tag=="Boss_enemy"){
+                    //codice del boss
+                    int health=other.gameObject.GetComponent<Pankar>().TakeDamage(5);
+                    
+                    print("la vita nel player è :"+ health);
+                    if(health<=0){
+                        //bounce e blocco
+                        print("sono dentro");
+                        bounce(other);
+                        
+                        StartCoroutine("wait",2f);
+                        
+                    }
+                    else{
+                        Jump();
+                    }
+                    
+                }
+                else{
+                    Destroy(other.gameObject);
+                    GameManager.getInstance().incPoints(5);
+                    OnTakePoint(); 
+                    Jump();
+                }
                 
-                Destroy(other.gameObject);
-                GameManager.getInstance().incPoints(5);
-                OnTakePoint(); 
-                Jump();
             }
             else
             {
-                state = State.hurt;
+                TakeDamage();
+                bounce(other);
+            }
+            
+        }
+      
+        
+    }
+    IEnumerator wait(float seconds){
+        state=State.hurt;
+        yield return new WaitForSeconds(seconds);  
+        state=State.hurt;  
+        yield return new WaitForSeconds(seconds);
+        state=State.idle;
+        print("sono passati i"+seconds*2 +"secondi");
+    }
+    public void TakeDamage(){
+        state = State.hurt;
                 //prendo danno
                 life--;
                 print(life);                 
@@ -153,8 +190,10 @@ public class Player : MonoBehaviour
                 if(life<=0){
                     state=State.die;                              
                     StartCoroutine("Die");
-                }
-                if (other.gameObject.transform.position.x > transform.position.x)
+                }                
+    }
+    private void bounce(Collision2D other){
+        if (other.gameObject.transform.position.x > transform.position.x)
                 {
                     
                     //Enemy is to my right therefore should be damaged and move left
@@ -166,10 +205,6 @@ public class Player : MonoBehaviour
                     //Enemy is to my left therefore i Should be damaged and move right
                     rb.velocity = new Vector2(+hurtForce, rb.velocity.y);
                 }
-            }
-            
-        }
-        
     }
     //die
     //sistemare in una classe apposita

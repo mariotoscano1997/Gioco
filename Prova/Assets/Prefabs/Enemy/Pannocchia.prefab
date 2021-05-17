@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4476935841925959843}
   - component: {fileID: 804379435232627560}
   - component: {fileID: 933407742843257248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pannocchia
   m_TagString: Enemy
   m_Icon: {fileID: 0}

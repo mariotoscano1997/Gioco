@@ -8,6 +8,7 @@ TagManager:
   - good_coin
   - bad_coin
   - endGameUI
+  - Boss_enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
