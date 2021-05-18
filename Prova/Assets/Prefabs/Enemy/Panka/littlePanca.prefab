@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8157183895045463591}
   - component: {fileID: 8157183895045463588}
   - component: {fileID: 5986031779738517955}
-  - component: {fileID: -4362072377890661914}
+  - component: {fileID: 2644784337951192807}
   m_Layer: 9
   m_Name: littlePanca
   m_TagString: Enemy
@@ -174,7 +174,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 4
   GroundDetection: {fileID: 5986031778994683724}
---- !u!50 &-4362072377890661914
+--- !u!50 &2644784337951192807
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
