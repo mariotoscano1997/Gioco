@@ -26,7 +26,7 @@ public class GameManager {
         time=0;
         points=0;
         isEndend=false;
-        lastCheck=new Vector3(-9.93f,-0.7802977f,0f);
+        lastCheck=new Vector3(-9.93f,-0.7802977f,-0.023f);
         isCheckpointTrigger=false;
         max_life=PlayerPrefs.GetInt("PlayerMaxLife",4);
         playerCurrentLife=max_life;
