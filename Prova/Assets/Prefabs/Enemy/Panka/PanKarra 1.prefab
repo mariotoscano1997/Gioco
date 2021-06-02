@@ -170,16 +170,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8317122519210223038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5756d322c5fe144a2efbec600d4219, type: 3}
+  m_Script: {fileID: 11500000, guid: b4b1d3170ccf3b64583dca084542333c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 50
   shootPrefab: {fileID: 7228478261941979403, guid: aca8a2f71f6792447994fca6f07c6e64,
     type: 3}
   spawn: {fileID: 2523801552138785003}
   pancaPrefabs: {fileID: 8157183895045463592, guid: aa242121c3976bc44a154d2c0fa3b09d,
     type: 3}
-  spawnOfPanca: {fileID: 0}
+  spawnOfPanca: {fileID: 2523801552138785003}
 --- !u!50 &4367393589394943320
 Rigidbody2D:
   serializedVersion: 4

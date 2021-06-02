@@ -1,0 +1,277 @@
+fileFormatVersion: 2
+guid: 2febc0852d5fd7a4b9599b99420341a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5298858066551652766
+    second: checkpoint annalisa_0
+  - first:
+      213: -4506320474650363777
+    second: checkpoint annalisa_1
+  - first:
+      213: 1441990531661630408
+    second: checkpoint annalisa_2
+  - first:
+      213: -3444617910430103718
+    second: checkpoint annalisa_3
+  - first:
+      213: 2692443232277993065
+    second: checkpoint annalisa_4
+  - first:
+      213: -5756523193204744158
+    second: checkpoint annalisa_5
+  - first:
+      213: -3346040033461950063
+    second: checkpoint annalisa_6
+  - first:
+      213: -6193027510102180333
+    second: checkpoint annalisa_7
+  - first:
+      213: 3090848484419916427
+    second: checkpoint annalisa_8
+  - first:
+      213: -7022737588297168173
+    second: checkpoint annalisa_9
+  - first:
+      213: -4743040722421574572
+    second: checkpoint annalisa_10
+  - first:
+      213: -8743940185420954355
+    second: checkpoint annalisa_11
+  - first:
+      213: 3561962908784587360
+    second: checkpoint annalisa_12
+  - first:
+      213: -5437883366821339736
+    second: checkpoint annalisa_13
+  - first:
+      213: -8771567944684482330
+    second: checkpoint annalisa_14
+  - first:
+      213: 3217301047854993766
+    second: checkpoint annalisa_15
+  - first:
+      213: 2214708031197925995
+    second: checkpoint annalisa_16
+  - first:
+      213: 2774070384215143712
+    second: checkpoint annalisa_17
+  - first:
+      213: 3545581941997488278
+    second: checkpoint annalisa_18
+  - first:
+      213: 2650031328400326571
+    second: checkpoint annalisa_19
+  - first:
+      213: -9146260915684313077
+    second: checkpoint annalisa_20
+  - first:
+      213: 1257869471838008187
+    second: checkpoint annalisa_21
+  - first:
+      213: -1087712690441124119
+    second: checkpoint annalisa_22
+  - first:
+      213: -5130891757351220276
+    second: checkpoint annalisa_23
+  - first:
+      213: -3231981635917085159
+    second: checkpoint annalisa_24
+  - first:
+      213: -3220809500490841861
+    second: checkpoint annalisa_25
+  - first:
+      213: 805739886206701813
+    second: checkpoint annalisa_26
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: checkpoint annalisa_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 149
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59f2bed0ea6eb54eb5a60f7201135a0
+      internalID: 5298858066551652766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: checkpoint annalisa_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 149
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fc34e8919fc6f449284f79c28fac5e
+      internalID: -4506320474650363777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: checkpoint annalisa_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 29
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9a8a322a3005749ad30ed85b45f3bb
+      internalID: 1441990531661630408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: checkpoint annalisa_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 29
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a55f31be235664198fe3b61d625374
+      internalID: -3444617910430103718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 979d3940731e252459950ac43b319e47
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

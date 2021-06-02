@@ -40,13 +40,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6108050665610903367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc64a021bf8587458ae890a69ca8316, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fdd5ef9f28ac1741af1db787e3bb836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
   - clip: {fileID: 8300000, guid: bb42dc238345a874a9a4f52b1ec0d256, type: 3}
     name: MainTheme
-    volume: 1
-    pitch: 1.73
+    volume: 0.589
+    pitch: 1.5
     source: {fileID: 0}
   isMute: 0

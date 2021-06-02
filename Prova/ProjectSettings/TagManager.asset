@@ -9,6 +9,9 @@ TagManager:
   - bad_coin
   - endGameUI
   - Boss_enemy
+  - Enemy_pan
+  - Ground
+  - coin
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Ground
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 
