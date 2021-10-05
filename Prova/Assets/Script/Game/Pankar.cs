@@ -27,6 +27,7 @@ public class Pankar : MonoBehaviour
         return Health;    
     }
     IEnumerator die(){
+        StopCoroutine("shoot");
         gameObject.GetComponent<Animator>().SetInteger("State", 1);
        
         //creo 10 piccoli panka

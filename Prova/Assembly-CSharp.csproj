@@ -55,10 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ani.cs" />
+     <Compile Include="Assets\chiamaOpzioni.cs" />
+     <Compile Include="Assets\ContinuafromPause.cs" />
+     <Compile Include="Assets\PauseCanvas.cs" />
      <Compile Include="Assets\Script\Canvas\AddNick.cs" />
      <Compile Include="Assets\Script\Canvas\backToMain.cs" />
      <Compile Include="Assets\Script\Canvas\CHECK_TUTORIAL.cs" />
      <Compile Include="Assets\Script\Canvas\controls.cs" />
+     <Compile Include="Assets\Script\Canvas\CreditsListener.cs" />
      <Compile Include="Assets\Script\Canvas\f.cs" />
      <Compile Include="Assets\Script\Canvas\finishCanvas.cs" />
      <Compile Include="Assets\Script\Canvas\GameOverCanvas.cs" />
@@ -86,6 +91,7 @@
      <Compile Include="Assets\Script\Game\Coins.cs" />
      <Compile Include="Assets\Script\Game\endLevel.cs" />
      <Compile Include="Assets\Script\Game\EnemyStaSulCoso.cs" />
+     <Compile Include="Assets\Script\Game\Extension_methods.cs" />
      <Compile Include="Assets\Script\Game\GameManager.cs" />
      <Compile Include="Assets\Script\Game\GCoinsElement.cs" />
      <Compile Include="Assets\Script\Game\GoodCoins.cs" />
@@ -98,26 +104,20 @@
      <Compile Include="Assets\Script\Game\projectile.cs" />
      <Compile Include="Assets\Script\Game\resetCheckpoint.cs" />
      <Compile Include="Assets\Script\Game\takePointsEvent.cs" />
-     <None Include="Assets\Script\hello_world\CMakeLists.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Script\hello_world\main\ble_spp_client\CMakeLists.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Script\hello_world\main\CMakeLists.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-     <None Include="Assets\Script\hello_world\main\ble_spp_client\build\CMakeCache.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Script\hello_world\build\CMakeCache.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-     <None Include="Assets\Script\hello_world\main\ble_spp_client\main\CMakeLists.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />

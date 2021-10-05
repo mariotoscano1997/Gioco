@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private enum State {idle, running, jumping, falling, hurt,die, stop}
     private State state = State.idle;
     private LifeHandler lifeHandler;
+
       
     void Start()
     {
@@ -71,7 +72,11 @@ public class Player : MonoBehaviour
         }
         AnimationState();
         anim.SetInteger("state", (int)state); //sets animation based on Enumerator state
-        
+        if(Input.GetKeyDown("escape")){
+            GameManager.getInstance().pause();
+            
+        }
+
       
     }
     public void move(){
@@ -145,6 +150,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                print("sono s");
                 TakeDamage();
                 bounce(other);
             }

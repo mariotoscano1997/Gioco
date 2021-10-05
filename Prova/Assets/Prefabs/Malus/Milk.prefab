@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7475102299701630721}
   - component: {fileID: 1912243607484950979}
   - component: {fileID: 8985063665497154200}
+  - component: {fileID: 6271384442534688215}
+  - component: {fileID: -7390935058766810954}
   m_Layer: 0
   m_Name: Milk
-  m_TagString: bad_coin
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +108,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19879535, y: 0.18771408}
   m_EdgeRadius: 0
+--- !u!114 &6271384442534688215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111581216415832227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffabce1b382326449dcb40188670a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 10
+--- !u!95 &-7390935058766810954
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111581216415832227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 992fbff0b766b6349999537c953c53a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

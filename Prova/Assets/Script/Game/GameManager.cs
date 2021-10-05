@@ -21,6 +21,7 @@ public class GameManager {
    private int score;
    private bool boost;
    public bool tutorialLoadedFromMenu;
+   private GameObject PauseMenu;
     private GameManager(){
         
         //print("lo sto creando");
@@ -192,7 +193,17 @@ public class GameManager {
     public int getPlayerCurrentLife(){
             return playerCurrentLife;
     }
-
+    public void pause(){
+        Time.timeScale=0;
+        PauseMenu.SetActive(true);
+    }
+    public void setPauseMenu(GameObject PauseMenu){
+        this.PauseMenu=PauseMenu;
+    }
+    public void resumeFromPause(){
+        Time.timeScale=1;
+        PauseMenu.SetActive(false);
+    }
 
 
 }

@@ -7,6 +7,7 @@ public class EnemyStaSulCoso : MonoBehaviour
     public int speed;
     public float distance;
     public Transform groundDetection;
+    public Transform view;
     public  bool stop;
     private bool movingRight;
    // Start is called before the first frame update
@@ -23,8 +24,8 @@ public class EnemyStaSulCoso : MonoBehaviour
              transform.Translate(Vector2.right* speed*Time.deltaTime);
              RaycastHit2D groundInfo=Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
              int layer_mask = LayerMask.GetMask("Ground","Enemy");
-             RaycastHit2D wallInfol=Physics2D.Raycast(groundDetection.position, Vector2.right, 0.1f,layer_mask);           
-
+             RaycastHit2D wallInfol=Physics2D.Raycast(view.position, Vector2.right, 0.1f,layer_mask);           
+            
             bool notGround=groundInfo.collider==false;
             bool panStopped=false;
             bool isWall=false;
@@ -50,17 +51,7 @@ public class EnemyStaSulCoso : MonoBehaviour
     void sleep(){
         
         GetComponent<Animator>().SetInteger("stop", 0);
-        if (movingRight==true)
-            {
-                
-                transform.eulerAngles= new Vector3(0, -180, 0);
-                movingRight = false;
-            }else
-            {
-            
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
+        movingRight = transform.turn(movingRight);
         stop=false;
     }
 }

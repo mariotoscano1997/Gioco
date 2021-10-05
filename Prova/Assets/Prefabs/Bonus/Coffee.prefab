@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8911954975728278218}
   - component: {fileID: 3833333982200461279}
   - component: {fileID: 1934117161426579078}
+  - component: {fileID: -3335599600184648056}
   m_Layer: 0
   m_Name: Coffee
   m_TagString: good_coin
@@ -117,7 +118,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 5265253628909843314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b9800818107934aad3c4e99861bd6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 754faa1a3df01244baa8199813f676e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneta: {fileID: 2591250420172624827}
+  points: 10
+--- !u!95 &-3335599600184648056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265253628909843314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: baffd7487a1cfa049bb0cf1ecf17d9a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

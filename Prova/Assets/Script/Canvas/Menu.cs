@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Menu : MonoBehaviour
     public void showTutorial(){
         GameManager.getInstance().tutorialLoadedFromMenu=true;
         SceneManager.LoadScene("Tutorial");
+    }
+    public void showCredits(){
+        SceneManager.LoadScene("Credits");
     }
     public void Shop(){
         SceneManager.LoadScene("Shop");
